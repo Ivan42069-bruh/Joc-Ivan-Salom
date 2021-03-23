@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://Idle (13).png" type="Texture" id=1]
 [ext_resource path="res://Idle (14).png" type="Texture" id=2]
@@ -37,8 +37,42 @@
 [ext_resource path="res://Run (8).png" type="Texture" id=35]
 [ext_resource path="res://Run (20).png" type="Texture" id=36]
 [ext_resource path="res://Run (4).png" type="Texture" id=37]
+[ext_resource path="res://Jump (15).png" type="Texture" id=38]
+[ext_resource path="res://Jump (5).png" type="Texture" id=39]
+[ext_resource path="res://Jump (19).png" type="Texture" id=40]
+[ext_resource path="res://Jump (1).png" type="Texture" id=41]
+[ext_resource path="res://Jump (24).png" type="Texture" id=42]
+[ext_resource path="res://Jump (16).png" type="Texture" id=43]
+[ext_resource path="res://Jump (9).png" type="Texture" id=44]
+[ext_resource path="res://Jump (3).png" type="Texture" id=45]
+[ext_resource path="res://Jump (12).png" type="Texture" id=46]
+[ext_resource path="res://Jump (18).png" type="Texture" id=47]
+[ext_resource path="res://Jump (8).png" type="Texture" id=48]
+[ext_resource path="res://Jump (20).png" type="Texture" id=49]
+[ext_resource path="res://Jump (22).png" type="Texture" id=50]
+[ext_resource path="res://Jump (26).png" type="Texture" id=51]
+[ext_resource path="res://Jump (27).png" type="Texture" id=52]
+[ext_resource path="res://platformPack_tile034.png" type="Texture" id=53]
+[ext_resource path="res://Jump (4).png" type="Texture" id=54]
+[ext_resource path="res://Jump (13).png" type="Texture" id=55]
+[ext_resource path="res://Jump (28).png" type="Texture" id=56]
+[ext_resource path="res://Jump (17).png" type="Texture" id=57]
+[ext_resource path="res://Jump (23).png" type="Texture" id=58]
+[ext_resource path="res://Jump (29).png" type="Texture" id=59]
+[ext_resource path="res://Jump (10).png" type="Texture" id=60]
+[ext_resource path="res://Jump (11).png" type="Texture" id=61]
+[ext_resource path="res://Jump (6).png" type="Texture" id=62]
+[ext_resource path="res://Jump (14).png" type="Texture" id=63]
+[ext_resource path="res://Jump (21).png" type="Texture" id=64]
+[ext_resource path="res://Jump (25).png" type="Texture" id=65]
+[ext_resource path="res://Jump (7).png" type="Texture" id=66]
+[ext_resource path="res://Jump (2).png" type="Texture" id=67]
+[ext_resource path="res://Jump (30).png" type="Texture" id=68]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.1878, 16.4931 )
+
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 16 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 7 ) ],
 "loop": true,
@@ -49,17 +83,50 @@ animations = [ {
 "loop": true,
 "name": "walkin",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 41 ), ExtResource( 67 ), ExtResource( 45 ), ExtResource( 54 ), ExtResource( 39 ), ExtResource( 62 ), ExtResource( 66 ), ExtResource( 48 ), ExtResource( 44 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 46 ), ExtResource( 55 ), ExtResource( 63 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 57 ), ExtResource( 47 ), ExtResource( 40 ), ExtResource( 49 ), ExtResource( 64 ), ExtResource( 50 ), ExtResource( 58 ), ExtResource( 42 ), ExtResource( 65 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 56 ), ExtResource( 59 ), ExtResource( 68 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
 } ]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 142.558, 491.102 )
+scale = Vector2( 1.86621, 0.929767 )
+texture = ExtResource( 53 )
+vframes = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -0.158775, -0.00106812 )
+shape = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 312, 463.999 )
+scale = Vector2( 1.86621, 0.929767 )
+texture = ExtResource( 53 )
+vframes = 2
+frame = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/StaticBody2D"]
+position = Vector2( -0.158775, -0.00106812 )
+shape = SubResource( 1 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 17 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
-position = Vector2( 364.416, 311.251 )
+position = Vector2( 136.673, 389.163 )
 scale = Vector2( 0.227831, 0.255418 )
-frames = SubResource( 1 )
-frame = 15
+frames = SubResource( 2 )
+frame = 5
 speed_scale = 5.0
 playing = true

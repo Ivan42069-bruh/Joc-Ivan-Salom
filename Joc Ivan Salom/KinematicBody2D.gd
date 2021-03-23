@@ -19,8 +19,6 @@ func _process(delta):
 	if Input.is_action_pressed("down"):
 		velocitat += Vector2(0, 50)
 		$AnimatedSprite.play('walkin')
-	if Vector2(0,0):
-		$AnimatedSprite.play('default')
 	position += velocitat * delta * 10
 	position.x = clamp(position.x, 0, 1024)
 	position.y = clamp(position.y, 0, 600)
