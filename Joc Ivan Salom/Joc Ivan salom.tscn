@@ -1,3 +1,65 @@
-[gd_scene format=2]
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://Idle (13).png" type="Texture" id=1]
+[ext_resource path="res://Idle (14).png" type="Texture" id=2]
+[ext_resource path="res://Idle (11).png" type="Texture" id=3]
+[ext_resource path="res://Idle (12).png" type="Texture" id=4]
+[ext_resource path="res://Idle (15).png" type="Texture" id=5]
+[ext_resource path="res://Idle (10).png" type="Texture" id=6]
+[ext_resource path="res://Idle (16).png" type="Texture" id=7]
+[ext_resource path="res://Idle (8).png" type="Texture" id=8]
+[ext_resource path="res://Idle (9).png" type="Texture" id=9]
+[ext_resource path="res://Idle (2).png" type="Texture" id=10]
+[ext_resource path="res://Idle (3).png" type="Texture" id=11]
+[ext_resource path="res://Idle (4).png" type="Texture" id=12]
+[ext_resource path="res://Idle (5).png" type="Texture" id=13]
+[ext_resource path="res://Idle (6).png" type="Texture" id=14]
+[ext_resource path="res://Idle (7).png" type="Texture" id=15]
+[ext_resource path="res://Idle (1).png" type="Texture" id=16]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=17]
+[ext_resource path="res://Run (19).png" type="Texture" id=18]
+[ext_resource path="res://Run (10).png" type="Texture" id=19]
+[ext_resource path="res://Run (17).png" type="Texture" id=20]
+[ext_resource path="res://Run (6).png" type="Texture" id=21]
+[ext_resource path="res://Run (7).png" type="Texture" id=22]
+[ext_resource path="res://Run (16).png" type="Texture" id=23]
+[ext_resource path="res://Run (1).png" type="Texture" id=24]
+[ext_resource path="res://Run (3).png" type="Texture" id=25]
+[ext_resource path="res://Run (2).png" type="Texture" id=26]
+[ext_resource path="res://Run (9).png" type="Texture" id=27]
+[ext_resource path="res://Run (11).png" type="Texture" id=28]
+[ext_resource path="res://Run (13).png" type="Texture" id=29]
+[ext_resource path="res://Run (14).png" type="Texture" id=30]
+[ext_resource path="res://Run (18).png" type="Texture" id=31]
+[ext_resource path="res://Run (12).png" type="Texture" id=32]
+[ext_resource path="res://Run (15).png" type="Texture" id=33]
+[ext_resource path="res://Run (5).png" type="Texture" id=34]
+[ext_resource path="res://Run (8).png" type="Texture" id=35]
+[ext_resource path="res://Run (20).png" type="Texture" id=36]
+[ext_resource path="res://Run (4).png" type="Texture" id=37]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 16 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 35 ), ExtResource( 27 ), ExtResource( 19 ), ExtResource( 28 ), ExtResource( 32 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 23 ), ExtResource( 20 ), ExtResource( 31 ), ExtResource( 18 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "walkin",
+"speed": 5.0
+} ]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 17 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 364.416, 311.251 )
+scale = Vector2( 0.227831, 0.255418 )
+frames = SubResource( 1 )
+frame = 15
+speed_scale = 5.0
+playing = true
