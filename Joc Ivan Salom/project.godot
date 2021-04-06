@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Joc Ivan Salom"
-run/main_scene="res://Joc Ivan Salom.tscn"
+run/main_scene="res://Ivan Salom Joc Finishi.tscn"
 config/icon="res://icon.png"
 
 [input]
